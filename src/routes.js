@@ -15,6 +15,8 @@ import App from './container/app/App';
 // 按需加载
 let LazyHome =(props) => (<Bundle {...props} load={()=>import('./container/home/Home')}/>)
 let LazyProfile =(props) => (<Bundle {...props} load={()=>import('./container/profile/Profile')}/>)
+let LazyUser =(props) => (<Bundle {...props} load={()=>import('./container/user/User')}/>)
+let LazyLogin =(props) => (<Bundle {...props} load={()=>import('./container/user/Login')}/>)
 
 let history = CreateHistory();
 export default class Routes extends React.Component {
@@ -25,6 +27,8 @@ export default class Routes extends React.Component {
             <Switch>
                 <Route path='/' exact={true} component={LazyHome}></Route>
                 <Route path='/profile' component={LazyProfile}></Route>
+                <Route path='/user' component={LazyUser}></Route>
+                <Route path='/login' component={LazyLogin}></Route>
                 <Redirect to="/"></Redirect>
             </Switch>
         </App>

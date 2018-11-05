@@ -11,6 +11,9 @@ import { Provider } from 'react-redux';
 import Routes from './routes';
 import store from './store';
 
+import 'weui';
+import 'react-weui/build/packages/react-weui.css';
+
 class Index extends React.Component {
   render() {
     return (

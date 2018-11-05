@@ -7,10 +7,10 @@
 import { applyMiddleware, createStore } from "redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
-//import promise from 'redux-promise';
+import promise from 'redux-promise';
 import reducer from "./reducers";
 //一些常用的中间件
-const middleware = [thunk, logger];
+const middleware = [thunk, logger, promise];
 let store = createStore(reducer, applyMiddleware(...middleware));
 window.store = store;
 export default store;
